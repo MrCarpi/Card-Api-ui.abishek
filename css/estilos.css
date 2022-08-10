@@ -1,0 +1,1492 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+#noche{
+    display: none;
+}
+.moon{
+    display: none;
+}
+.container-proyecto{
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgb(255, 110, 52),rgb(255, 255, 108));
+    width: 100%;
+    visibility: visible;
+}
+.container-proyecto .background-proyecto{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0a0a24;
+    visibility: hidden;
+}
+#noche:checked ~ .container-proyecto .background-proyecto{
+    background-color: #0a0a24;
+    visibility: visible;
+}
+.waves{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 143px;
+    background:  url(/Card-Api-ui.abishek/img/wave.png);
+    animation: animate 10s linear infinite; 
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 1360px;
+    }
+}
+.waves:before{
+ content: '';
+ width: 100%;
+ height: 143px;
+ position: absolute;
+ background: url(/Card-Api-ui.abishek/img/wave.png);
+ top: 0;
+ left: 0;
+ opacity: 0.4;
+ animation: animate-reverse 10s linear infinite;
+}
+@keyframes animate-reverse{
+    0%{
+        background-position: 1360px;
+    }
+    100%{
+        background-position: 0;
+    }
+}
+
+.waves:after{
+    content: '';
+    width: 100%;
+    height: 143px;
+    position: absolute;
+    background: url(/img/wave.png);
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+    animation-delay: -5s;
+    animation: animate 20s linear infinite;
+   }
+#evento-click{
+    display: none;
+}
+#evento-click:checked ~ .container{
+    visibility: visible;
+}
+.container{
+    visibility: visible;
+    margin: 50px auto;
+    display: grid;
+    place-items:center;
+    position: relative;
+    height: 670px;
+    width: 330px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 0px 14px rgba(0,0,0,0.8);
+}
+
+.container .container__imagen .background{
+    position: absolute;
+    height: 670px;
+    width: 330px;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 5;
+}
+.container .container__imagen img{
+    z-index: 6;
+    position: absolute;
+    width: 140%;
+    height: 350px;
+    object-fit: cover;
+    top: 60px; 
+    left:-45%;
+}
+.container .container__imagen .background-two{
+    width: 410px;
+    height: 370px;
+    background-color: #1d1e33;
+    position: absolute;
+    top:85%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 7;
+    border-radius: 50%;
+}
+.container .container__imagen .boton{
+    z-index: 7;
+    display: block;
+    position: absolute;
+    top: 81%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    border: none;
+    color: white;
+    background: linear-gradient(rgb(255, 110, 52),rgb(255, 255, 108));
+    transition: all .4s;
+    box-shadow: 0px 1px 10px rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.container .container__imagen .boton ion-icon{
+    font-size: 28px;
+    transition: all .4s;
+}
+.container .container__imagen .boton:hover{
+    transition: all .4s;
+    background: linear-gradient(rgb(252, 111, 55),rgb(255, 255, 116));
+    box-shadow: 0px 1px 10px rgba(31, 31, 31, 0.2);
+}
+.container .container__imagen .boton:hover ion-icon{
+    transform: scale(1.2);
+    transition: all .3s;
+
+}
+.container .container__imagen .title-paragraph{
+    color: white;
+    z-index: 8;
+    position: absolute;
+    top: 70%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.container .container__imagen .title-paragraph h2{
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.container .container__imagen .title-paragraph p{
+    font-size: 13px;
+    color: rgb(170, 170, 170);
+    width: 300px;
+    line-height: 18px;
+}
+.container .container__api{
+    padding: 20px;
+    position: absolute;
+    height: 670px;
+    width: 330px;
+    background: #1d1e33;
+    z-index: 9;
+    right: -100%;
+    visibility: hidden;
+    border-radius: 30px;
+
+}
+#evento-click:checked ~ .container .container__api{
+    visibility: visible;
+    transition: .3s;
+    right: 0;
+}
+.container .container__api .first-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.container .container__api .first-section .welcome h2{
+    font-size: 14px;
+    color: white;
+    font-weight: 400;
+}
+.container .container__api .first-section .welcome p{
+    font-size: 12px;
+    color: rgb(146, 146, 146);
+    letter-spacing: 1px;
+}
+.container .container__api .first-section .imagen{
+    
+    display: block;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.container .container__api .second-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.container .container__api .second-section .container-input{
+    position: relative;
+}
+.container .container__api .second-section .container-input input{
+    border-radius: 14px;
+    height: 40px;
+    width:110%;
+    border: none;
+    padding: 10px 34px;
+    outline: none;
+    background: #2a2b42;
+    font-size: 12px;
+    color: white;
+    transition: .3s;
+}
+.container .container__api .second-section .container-input input:hover{
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.4);
+    transition: .3s;
+}
+.container .container__api .second-section .container-input input:focus{
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.4);
+}
+.container .container__api .second-section .container-input input::placeholder{
+    font-size: 12px;
+
+}
+.container .container__api .second-section .container-input ion-icon{
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 8;
+    color: white;
+    font-size: 18px;
+}
+.container .container__api .second-section .search{
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(rgb(255, 110, 52),rgb(255, 255, 108));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .4s;
+    box-shadow: 0px 0px 3px  rgb(255, 171, 46);
+}
+.container .container__api .second-section .search:hover{
+    box-shadow: 0px 0px 10px rgb(255, 171, 46);
+    transition: .4s;
+}
+.container .container__api .second-section .search ion-icon{  
+    color: white;
+    font-size: 20px;
+}
+.container .container__api .three-section .container-categories{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.container .container__api .three-section .container-categories h3{
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+}
+.container .container__api .three-section .container-categories p{
+    color: rgb(184, 184, 184);
+    font-size: 13px;
+    font-weight: 400;
+}
+.container .container__api .three-section .container-slider .slider{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+}
+.container .container__api .three-section .container-slider .design{
+    width: 50px;
+    height: 50px;
+    background-color: #2a2b42b6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .4s;
+}
+.container .container__api .three-section .container-slider .design:hover{
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+}
+.container .container__api .three-section .container-slider .design img{
+    width: 30px;
+    height: 30px;
+    transition: .4s;
+}
+.container .container__api .three-section .container-slider .design:hover img{
+    transform: scale(1.1);
+    transition: .4s;
+}
+
+.container .container__api .three-section .container-slider .ui-ux{
+    width: 50px;
+    height: 50px;
+    background-color: #2a2b42b6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s;
+    cursor: pointer;
+}
+.container .container__api .three-section .container-slider .ui-ux:hover{
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+}
+.container .container__api .three-section .container-slider .ui-ux img{
+    width: 30px;
+    height: 30px;
+    transition: .4s;
+}
+.container .container__api .three-section .container-slider .ui-ux:hover img{
+    transform: scale(1.1);
+    transition: .4s;
+}
+
+.container .container__api .three-section .container-slider .coding{
+    width: 50px;
+    height: 50px;
+    background-color: #2a2b42b6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s;
+    cursor: pointer;
+}
+.container .container__api .three-section .container-slider .coding:hover{
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    transition: .4s;
+}
+.container .container__api .three-section .container-slider .coding img{
+    width: 30px;
+    height: 30px;
+    transition: .4s;
+}
+.container .container__api .three-section .container-slider .coding:hover img{
+    transform: scale(1.1);
+    transition: .4s;
+}
+
+.container .container__api .three-section .container-slider .seo{
+    width: 50px;
+    height: 50px;
+    background-color: #2a2b42b6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s;
+    cursor: pointer;
+}
+.container .container__api .three-section .container-slider .seo:hover{
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    transition: .4s;
+}
+.container .container__api .three-section .container-slider .seo img{
+    width: 30px;
+    height: 30px;
+    transition: .4s;
+}
+.container .container__api .three-section .container-slider .seo:hover img{
+    transform: scale(1.1);
+    transition: .4s;
+}
+.container .container__api .three-section .slider-info{
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    gap: 44.5px;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 9px;
+    font-weight: 400;
+}
+.container .container__api .three-section .container-cards{
+    display: flex;
+    margin-bottom: 10px;
+    gap: 20px;
+    overflow-x:scroll;
+    scroll-snap-type: x proximity;
+    max-width: 500px;
+    width: 100%;
+}
+
+.container .container__api .three-section .container-cards::-webkit-scrollbar{
+    height: 8px;
+    width: 100%;
+    border-top:15px solid #202233;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.container .container__api .three-section .container-cards::-webkit-scrollbar-thumb{
+    background-color: rgb(24, 25, 41);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.container .container__api .three-section .container-cards::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(54, 54, 73);
+    cursor: pointer;
+}
+
+.container .container__api .three-section .container-cards .card{
+    min-width: 230px;
+    height: 230px;
+    background-color: #2a2b42;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: .4s;
+}
+.container .container__api .three-section .container-cards .card:hover{
+    background-color: #32334e;
+    transition: .3s;
+}
+
+
+
+
+
+.container .container__api .three-section .container-cards .card .imagen{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 60%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px  rgba(0,0,0,0.2);
+    margin-bottom: 5px;
+}
+.container .container__api .three-section .container-cards .card .imagen img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .4s;
+}
+.container .container__api .three-section .container-cards .card:hover .imagen img{
+    transform: scale(1.03);
+    transition: .4s;
+}
+.container .container__api .three-section .container-cards .card .imagen .imagen-right{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 109, 109);
+}
+
+/*---Card 2---*/
+.container .container__api .three-section .container-cards .card-2 .imagen .imagen-right{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(59, 194, 66);
+}
+.container .container__api .three-section .container-cards .card .imagen .imagen-right h3{
+    background-color: rgb(32, 6, 32);
+    font-size: 26px;
+    padding: 7px;
+    border: 2px solid rgb(255, 29, 198);
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0px 0px 3px rgb(0, 0, 0);
+    transition: .4s;
+}
+.container .container__api .three-section .container-cards .card:hover .imagen .imagen-right h3{
+    font-size: 28px;
+    transition: .4s;
+}
+.container .container__api .three-section .container-cards .card .perfil img{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.container .container__api .three-section .container-cards .card .perfil h3{
+    font-size: 13px;
+    color: #fff;
+    font-weight: 400;
+}
+.container .container__api .three-section .container-cards .card .perfil .perfil-info{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgb(231, 231, 231);
+}
+.container .container__api .three-section .container-cards .card .perfil .perfil-info h5{
+    font-size: 12px;
+    font-weight: 300;
+}
+.container .container__api .three-section .container-cards .card .count-start{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: -4px;
+}
+.container .container__api .three-section .container-cards .card .count-start span{
+    font-weight: 500;
+    color: #ffc64a;
+}
+.container .container__api .three-section .container-cards .card .count-start p{
+    border: 1.5px solid #fff;
+    border-radius: 14px;
+    padding: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+.container .container__api .three-section .container-cards .card .count-start p ion-icon{
+    color: #ffc64a;
+    margin-right: 3px;
+}
+
+/*--Card2--*/
+
+.container .container__api .three-section .container-cards .card2{
+    min-width: 230px;
+    height: 230px;
+    background-color: #2a2b42;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: .4s;
+}
+.container .container__api .three-section .container-cards .card2:hover{
+    background-color: #32334e;
+    transition: .3s;
+}
+
+
+.container .container__api .three-section .container-cards .card2 .imagen{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 60%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px  rgba(0,0,0,0.2);
+    margin-bottom: 5px;
+}
+.container .container__api .three-section .container-cards .card2 .imagen img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .4s;
+}
+.container .container__api .three-section .container-cards .card2:hover .imagen img{
+    transform: scale(1.04);
+    transition: .4s;
+}
+
+
+.container .container__api .three-section .container-cards .card2 .imagen .imagen-right{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 252, 51);
+}
+.container .container__api .three-section .container-cards .card2 .imagen .imagen-right h3{
+    background-color: rgb(255, 87, 9);
+    font-size: 26px;
+    padding: 7px;
+    border: 2px solid rgb(168, 0, 8);
+    border-radius: 5px;
+    color: white;
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+    
+    transition: .4s;
+}
+.container .container__api .three-section .container-cards .card2:hover .imagen .imagen-right h3{
+    font-size: 28px;
+    transition: .4s;
+}
+.container .container__api .three-section .container-cards .card2 .perfil img{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.container .container__api .three-section .container-cards .card2 .perfil h3{
+    font-size: 13px;
+    color: #fff;
+    font-weight: 400;
+}
+.container .container__api .three-section .container-cards .card2 .perfil .perfil-info{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgb(231, 231, 231);
+}
+.container .container__api .three-section .container-cards .card2 .perfil .perfil-info h5{
+    font-size: 12px;
+    font-weight: 300;
+}
+.container .container__api .three-section .container-cards .card2 .count-start{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: -4px;
+}
+.container .container__api .three-section .container-cards .card2 .count-start span{
+    font-weight: 500;
+    color: #ffc64a;
+}
+.container .container__api .three-section .container-cards .card2 .count-start p{
+    border: 1.5px solid #fff;
+    border-radius: 14px;
+    padding: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+.container .container__api .three-section .container-cards .card2 .count-start p ion-icon{
+    color: #ffc64a;
+    margin-right: 3px;
+}
+.container .container__api .three-section  .info-nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.container .container__api .three-section  .info-nav h6{
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(228, 228, 228);
+}
+.container .container__api .three-section  .info-nav p{
+    color: rgb(170, 170, 170);
+    font-size: 13px;
+}
+
+.container .container__api .four-section{
+    width: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #2a2b42;
+    border-radius: 22px;
+    margin: 30px auto;
+    height: 75px;
+    gap: 12px;
+    pointer-events: all;
+
+}
+.container .container__api .four-section .home{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 2px;
+}
+
+.container .container__api .four-section .home ion-icon{
+    color: #ffc64a;
+}
+.container .container__api .four-section .home p{
+    color: #ffc64a;
+}
+.container .container__api .four-section .cart{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .3s;
+}
+.container .container__api .four-section .cart:hover ion-icon{
+    color: #ffc64a;
+    transition: .3s;
+}
+.container .container__api .four-section .cart:hover p{
+    color: #ffc64a;
+    transition: .3s;
+}
+
+
+.container .container__api .four-section .saved{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 2px;
+    transition: .3s;
+    cursor: pointer;
+}
+.container .container__api .four-section .saved:hover ion-icon{
+    color: #ffc64a;
+    transition: .3s;
+}
+.container .container__api .four-section .saved:hover p{
+    color: #ffc64a;
+    transition: .3s;
+}
+.container .container__api .four-section .course{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 2px;
+    transition: .3s;
+    cursor: pointer;
+}
+.container .container__api .four-section .course:hover ion-icon{
+    color: #ffc64a;
+    transition: .3s;
+}
+.container .container__api .four-section .course:hover p{
+    color: #ffc64a;
+    transition: .3s;
+}
+.container .container__api .four-section .profile{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.container .container__api .four-section .profile:hover ion-icon{
+        color: #ffc64a;
+        transition: .3s;
+}
+.container .container__api .four-section .profile:hover p{
+        color: #ffc64a;
+        transition: .3s;
+}
+.container .container__api .four-section p{
+    font-size: 10px;
+    color: rgb(228, 228, 228);
+}
+.container .container__api .four-section ion-icon{
+    font-size: 18px;
+    color: rgb(228, 228, 228);
+    margin-bottom: 4px;
+}
+
+#evento-click-viñeta{
+    display: none;
+}
+
+.container-checkbox{
+
+    position: relative;
+    height: 670px;
+    width: 330px;
+    background: #1d1e33;
+    z-index: 20;
+    right: -100%;
+    visibility: hidden;
+    border-radius: 30px;
+    padding: 20px;
+    transition: .3s;
+}
+#evento-click-viñeta:checked ~ .container .container-checkbox{
+    visibility: visible;
+    transition: .3s;
+    right: 0;
+    margin-left: 0px;
+
+}
+.container-checkbox .checkbox-top{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+}
+.container-checkbox .checkbox-top label{
+    font-size: 14px;
+    color: #fff;
+}
+.container-checkbox .checkbox-top h2{
+    color: rgb(218, 218, 218);
+    font-size: 16px;
+    font-weight: 400;
+    
+}
+.container-checkbox .checkbox-top label ion-icon{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 26px;
+    color:rgb(255, 181, 43);
+    cursor: pointer;
+}
+.container-checkbox .checkbox-top ion-icon{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 26px;
+    color:rgb(255, 181, 43);
+    cursor: pointer;
+    transition: .4s;
+}
+.container-checkbox .checkbox-top ion-icon:hover{
+    box-shadow: 0px 0px 4px rgb(255, 255, 255);
+    transition: .4s;
+    transform: scale(1.07);
+}
+.container-checkbox .card .imagen{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 0px 7px rgba(0,0,0,0.4);
+}.container-checkbox .card .imagen .imagen-right{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 109, 109);
+}
+.container-checkbox .card .imagen .imagen-right h3{
+    background-color: rgb(32, 6, 32);
+    font-size: 36px;
+    padding: 7px;
+    border: 2px solid rgb(255, 29, 198);
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.7);
+}
+.container-checkbox .card .imagen img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.container-checkbox .card .perfil{
+    margin-top: 20px;
+    color: rgb(194, 194, 194);
+    font-size: 16px;
+}
+.container-checkbox .card .perfil h3{
+    margin-bottom: 10px;
+}
+.container-checkbox .card .perfil-info{
+    align-items: center;
+    gap: 8px;
+    display: flex;
+    margin-bottom: 20px;
+}
+.container-checkbox .card .perfil-info h5{
+    margin-right: 15px;
+    letter-spacing: 1px;
+}
+.container-checkbox .card .perfil-info .count-start{
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+    align-items: center;
+}
+.container-checkbox .card .perfil img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.container-checkbox .card .perfil-info .count-start span{
+    font-weight: 500;
+    color: #ffc955;
+    letter-spacing: 0.7px;
+    pointer-events: none;
+
+}
+.container-checkbox .card .perfil-info .count-start p{
+        border: 1.5px solid #fff;
+        border-radius: 13px;
+        padding: 3px 7px;
+        font-size: 14px;
+        color: #fff;
+        margin-right: 20px;
+        letter-spacing: 1px;
+    cursor: pointer;
+        transition: .5;
+}
+.container-checkbox .card .perfil-info .count-start p:hover{
+    box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.4);
+    transition: .3s;
+}
+.container-checkbox .card .perfil-info .count-start ion-icon{
+    margin-right: 5px;
+    color: #ffd30e;
+}
+.container-checkbox .card .perfil-info .count-start p:hover ion-icon{
+transform: scale(1.08);
+transition: .5;
+}
+.container-checkbox .card .info-course{
+    color: #8a8a8a;
+    font-size: 13px;
+    line-height: 25px;
+    margin-bottom: 5px;
+}
+.container-checkbox h6{
+    color: rgb(224, 224, 224);
+    font-size: 17px;
+    margin-left: 5px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+.container-checkbox .container-courses .course{
+    width: 100%;
+    background-color: #3a3a5756;
+    border-radius: 12px;
+    padding: 14px 10px;
+    display: flex;
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px #212141;
+    cursor: pointer;
+    transition: .4s;
+    position: relative;
+}
+.container-checkbox .container-courses .course:hover img{
+    transform: scale(1.1);
+    transition: .4s linear;
+}
+.container-checkbox .container-courses .course:hover{
+    box-shadow: 0px 0px 12px #0a0a24;
+    transition: .3s;
+}
+.container-checkbox .container-courses .course .imagen{
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.container-checkbox .container-courses .course .imagen img{
+    width: 100%;
+    height: 100%;
+    transition: .4s ease;
+}
+.container-checkbox .container-courses .course .time-cap{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: -30px;
+    line-height: 23px;
+}
+.container-checkbox .container-courses .course .time-cap span{
+    color: rgb(224, 224, 224);
+    font-size: 15px;
+
+}
+.container-checkbox .container-courses .course .time-cap p{
+    color: rgb(124, 124, 124);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.container-checkbox .container-courses .course .time-cap p ion-icon{
+    color: rgb(207, 207, 207);
+    margin-left: -20px;
+    font-size: 13px;
+}
+.container-checkbox .container-courses .course > ion-icon{
+    display: block;
+    background: linear-gradient(rgb(255, 110, 52),rgb(255, 255, 108));
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+    color: rgb(243, 243, 243);
+    cursor: pointer;
+    box-shadow: 0px 0px 3px rgba(255, 255, 108, 0.322)
+}
+.container-checkbox .container-courses .course-2{
+    position: absolute;
+    top: 4px;
+    background-color: #Fff;
+    
+}
+
+.container-checkbox .container-courses .course-2{
+    width: 100%;
+    background-color: #3a3a5711;
+    border-radius: 12px;
+    padding: 14px 10px;
+    display: flex;
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px #212141;
+    cursor: pointer;
+    transition: .4s;
+    position: relative;
+    opacity: 0.7;
+    pointer-events: none;
+}
+.container-checkbox .container-courses .course-2:hover img{
+    transform: scale(1.1);
+    transition: .4s linear;
+    
+}
+.container-checkbox .container-courses .course-2:hover{
+    box-shadow: 0px 0px 12px #0a0a24;
+    transition: .3s;
+}
+.container-checkbox .container-courses .course-2 .imagen{
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.container-checkbox .container-courses .course-2 .imagen img{
+    width: 100%;
+    height: 100%;
+    transition: .4s ease;
+}
+.container-checkbox .container-courses .course-2 .time-cap{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: -30px;
+    line-height: 23px;
+}
+.container-checkbox .container-courses .course-2 .time-cap span{
+    color: rgb(224, 224, 224);
+    font-size: 15px;
+
+}
+.container-checkbox .container-courses .course-2 .time-cap p{
+    color: rgb(124, 124, 124);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.container-checkbox .container-courses .course-2 .time-cap p ion-icon{
+    color: rgb(207, 207, 207);
+    margin-left: -20px;
+    font-size: 13px;
+}
+.container-checkbox .container-courses .course-2 > ion-icon{
+    display: block;
+    background: linear-gradient(rgba(255, 110, 52, 0.226),rgba(255, 255, 108, 0.288));
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+    color: rgb(243, 243, 243);
+    cursor: pointer;
+    box-shadow: 0px 0px 3px rgba(255, 255, 108, 0.322)
+}
+.container-checkbox .btn{
+    display: block;
+    position: absolute;
+    bottom: 18;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 47px;
+    width: 280px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background: linear-gradient(rgb(255, 114, 58),rgb(255, 255, 114));
+    
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(255, 159, 50, 0.507);
+    transition: .4s;
+}
+.container-checkbox .btn:hover{
+    box-shadow: 0px 4px 7px rgba(255, 159, 50, 0.507);
+    background: linear-gradient(rgb(255, 95, 31),rgb(241, 241, 91));
+    transition: .4s;
+    letter-spacing: 2.2px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+/*--Card 2 SEO--*/
+#evento-click-viñeta2{
+    display: none;
+}
+
+.container-checkbox2{
+
+    position: relative;
+    height: 670px;
+    width: 330px;
+    background: #1d1e33;
+    top: -100%;
+    z-index: 20;
+    right: -100%;
+    visibility: hidden;
+    border-radius: 30px;
+    padding: 20px;
+    transition: .3s;
+}
+#evento-click-viñeta2:checked ~ .container .container-checkbox2{
+    visibility: visible;
+    transition: .3s;
+    right: 0;
+    margin-left: 0px;
+
+}
+.container-checkbox2 .checkbox-top{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+}
+.container-checkbox2 .checkbox-top label{
+    font-size: 14px;
+    color: #fff;
+}
+.container-checkbox2 .checkbox-top h2{
+    color: rgb(218, 218, 218);
+    font-size: 16px;
+    font-weight: 400;
+    
+}
+.container-checkbox2 .checkbox-top label ion-icon{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 26px;
+    color:rgb(255, 181, 43);
+    cursor: pointer;
+}
+.container-checkbox2 .checkbox-top ion-icon{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 26px;
+    color:rgb(255, 181, 43);
+    cursor: pointer;
+    transition: .4s;
+}
+.container-checkbox2 .checkbox-top ion-icon:hover{
+    box-shadow: 0px 0px 4px rgb(255, 255, 255);
+    transition: .4s;
+    transform: scale(1.07);
+}
+.container-checkbox2 .card2 .imagen{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 0px 7px rgba(0,0,0,0.4);
+}.container-checkbox2 .card2 .imagen .imagen-right{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 109, 109);
+}
+.container-checkbox2 .card2 .imagen .imagen-right h3{
+    background-color: rgb(32, 6, 32);
+    font-size: 36px;
+    padding: 7px;
+    border: 2px solid rgb(255, 29, 198);
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.7);
+}
+.container-checkbox2 .card2 .imagen img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.container-checkbox2 .card2 .perfil{
+    margin-top: 20px;
+    color: rgb(194, 194, 194);
+    font-size: 16px;
+}
+.container-checkbox2 .card2 .perfil h3{
+    margin-bottom: 10px;
+}
+.container-checkbox2 .card2 .perfil-info{
+    align-items: center;
+    gap: 8px;
+    display: flex;
+    margin-bottom: 10px;
+}
+.container-checkbox2 .card2 .perfil-info h5{
+    margin-right: 15px;
+    letter-spacing: 1px;
+}
+.container-checkbox2 .card2 .perfil-info .count-start{
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+    align-items: center;
+}
+.container-checkbox2 .card2 .perfil img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.container-checkbox2 .card2 .perfil-info .count-start span{
+    font-weight: 500;
+    color: #ffc955;
+    letter-spacing: 0.7px;
+    pointer-events: none;
+
+}
+.container-checkbox2 .card2 .perfil-info .count-start p{
+        border: 1.5px solid #fff;
+        border-radius: 13px;
+        padding: 3px 7px;
+        font-size: 14px;
+        color: #fff;
+        margin-right: 20px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: .5;
+}
+.container-checkbox2 .card2 .perfil-info .count-start p:hover{
+    box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.4);
+    transition: .3s;
+}
+.container-checkbox2 .card2 .perfil-info .count-start ion-icon{
+    margin-right: 5px;
+    color: #ffd30e;
+}
+.container-checkbox2 .card2 .perfil-info .count-start p:hover ion-icon{
+transform: scale(1.08);
+transition: .5;
+}
+.container-checkbox2 .card2 .info-course{
+    color: #8a8a8a;
+    font-size: 11px;
+    line-height: 25px;
+    margin-bottom: 0px;
+}
+.container-checkbox2 h6{
+    color: rgb(224, 224, 224);
+    font-size: 17px;
+    margin-left: 5px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+.container-checkbox2 .container-courses .course{
+    width: 100%;
+    background-color: #3a3a5756;
+    border-radius: 12px;
+    padding: 14px 10px;
+    display: flex;
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px #212141;
+    cursor: pointer;
+    transition: .4s;
+    position: relative;
+}
+.container-checkbox2 .container-courses .course:hover img{
+    transform: scale(1.1);
+    transition: .4s linear;
+}
+.container-checkbox2 .container-courses .course:hover{
+    box-shadow: 0px 0px 12px #0a0a24;
+    transition: .3s;
+}
+.container-checkbox2 .container-courses .course .imagen{
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.container-checkbox2 .container-courses .course .imagen img{
+    width: 100%;
+    height: 100%;
+    transition: .4s ease;
+}
+.container-checkbox2 .container-courses .course .time-cap{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: -30px;
+    line-height: 23px;
+}
+.container-checkbox2 .container-courses .course .time-cap span{
+    color: rgb(224, 224, 224);
+    font-size: 15px;
+
+}
+.container-checkbox2 .container-courses .course .time-cap p{
+    color: rgb(124, 124, 124);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.container-checkbox2 .container-courses .course .time-cap p ion-icon{
+    color: rgb(207, 207, 207);
+    margin-left: -20px;
+    font-size: 13px;
+}
+.container-checkbox2 .container-courses .course > ion-icon{
+    display: block;
+    background: linear-gradient(rgb(255, 110, 52),rgb(255, 255, 108));
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+    color: rgb(243, 243, 243);
+    cursor: pointer;
+    box-shadow: 0px 0px 3px rgba(255, 255, 108, 0.322)
+}
+.container-checkbox2 .container-courses .course-2{
+    position: absolute;
+    top: 4px;
+    background-color: #Fff;
+    
+}
+
+.container-checkbox2 .container-courses .course-2{
+    width: 100%;
+    background-color: #3a3a5721;
+    border-radius: 12px;
+    padding: 14px 10px;
+    display: flex;
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px #212141;
+    cursor: pointer;
+    transition: .4s;
+    position: relative;
+    opacity: 0.2;
+    pointer-events: none;
+}
+.container-checkbox2 .container-courses .course-2:hover img{
+    transform: scale(1.1);
+    transition: .4s linear;
+    
+}
+.container-checkbox2 .container-courses .course-2:hover{
+    box-shadow: 0px 0px 12px #0a0a24;
+    transition: .3s;
+}
+.container-checkbox2 .container-courses .course-2 .imagen{
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.container-checkbox2 .container-courses .course-2 .imagen img{
+    width: 100%;
+    height: 100%;
+    transition: .4s ease;
+}
+.container-checkbox2 .container-courses .course-2 .time-cap{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: -30px;
+    line-height: 23px;
+}
+.container-checkbox2 .container-courses .course-2 .time-cap span{
+    color: rgb(224, 224, 224);
+    font-size: 15px;
+
+}
+.container-checkbox2 .container-courses .course-2 .time-cap p{
+    color: rgb(124, 124, 124);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.container-checkbox2.container-courses .course-2 .time-cap p ion-icon{
+    color: rgb(207, 207, 207);
+    margin-left: -20px;
+    font-size: 13px;
+}
+.container-checkbox2 .container-courses .course-2 > ion-icon{
+    display: block;
+    background: linear-gradient(rgba(255, 110, 52, 0.226),rgba(255, 255, 108, 0.288));
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+    color: rgb(243, 243, 243);
+    cursor: pointer;
+    box-shadow: 0px 0px 3px rgba(255, 255, 108, 0.322)
+}
+.container-checkbox2 .btn{
+    display: block;
+    position: absolute;
+    bottom: 18;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 47px;
+    width: 280px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background: linear-gradient(rgb(255, 114, 58),rgb(255, 255, 114));
+    
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(255, 159, 50, 0.507);
+    transition: .4s;
+}
+.container-checkbox2 .btn:hover{
+    box-shadow: 0px 4px 7px rgba(255, 159, 50, 0.507);
+    background: linear-gradient(rgb(255, 95, 31),rgb(241, 241, 91));
+    transition: .4s;
+    letter-spacing: 2.2px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
