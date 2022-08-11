@@ -12,7 +12,228 @@
     display: none;
 }
 .moon{
-    display: none;
+    display: inline;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20;
+    right: 10%;
+    z-index: 20;
+    color: rgb(11, 12, 46);
+    border: 1px solid rgb(11, 12, 46);
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 10px rgb(11, 12, 46),
+    0px 0px 10px rgba(99, 99, 99, 0.8);
+    padding: 10px;
+    cursor: pointer;
+    transition: .4s;
+}
+.moon:hover{
+    box-shadow: inset 0px 1px 10px rgb(0, 1, 58),
+    0px 2px 12px rgba(0, 1, 77, 0.6);
+    transition: .4s;
+    transform: scale(1.08);
+}
+
+#noche:checked ~ .container-proyecto .moon{
+    color: rgb(207, 207, 207);
+    box-shadow: inset 0px 0px 5px rgb(180, 180, 180),
+                    0px 0px 5px rgb(180, 180, 180);
+    visibility: visible;
+}
+.planet{
+    display: flex;
+    position: relative;
+    visibility: hidden;
+}
+#noche:checked ~ .container-proyecto .planet{
+    visibility: visible;
+}
+.planet ion-icon{
+    font-size: 80px;
+}
+
+.planet .planeta{
+    display: block;
+    position: absolute;
+    width: 180px;
+    top: 55px;
+    right: 23%;
+    animation: planet-rotate 3s linear infinite;
+    border-radius: 50%;
+    box-shadow: inset 0px 5px 15px #888,
+                 0px 5px 15px #888;
+    text-shadow: 0px 5px 15px #888;
+}
+@keyframes planet-rotate{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.planet .moon-imagen{
+    width: 120px;
+    display: block;
+    position: absolute;
+    left: 345px;
+    top: 250px;
+    animation: moon-rotate 6s linear infinite;
+   
+}
+
+@keyframes moon-rotate{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(25px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.planet .rocket{
+    display: block;
+    position: absolute;
+    width: 120px;
+    left: -120px;
+    top:700px;
+    animation: rocket 9s linear infinite;
+}
+@keyframes rocket {
+    0%{
+        transform: translateY(0px);
+        
+    }
+    100%{
+        
+        transform: translateX(1900px) translateY(-1400px);
+    }
+}
+.stars{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    visibility: hidden;
+    position: absolute;
+    top: -20;
+    transition: .3s;
+    animation: stars 18s linear infinite;
+}
+@keyframes stars{
+    0%{
+        top: -20px;
+    }
+ 
+    100%{
+ 
+        top: 160%;
+    }
+}
+
+.stars ion-icon{
+    color: #ffda38;
+    text-shadow:10px 10px 30px rgb(249, 253, 21);
+    visibility: hidden;
+}
+#noche:checked ~ .container-proyecto .stars ion-icon{
+    visibility: visible;
+}
+/*--!Estrellas!--*/
+.stars .star1{
+    font-size: 16px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -20;
+}
+.stars .star2{
+    font-size: 16px;
+    display: block;
+    position: absolute;
+    left: 260px;
+    top: -330px;
+}
+.stars .star3{
+    font-size: 16px;
+    display: block;
+    position: absolute;
+    left:520px;
+    top: -20px;
+}
+.stars .star4{
+    font-size: 16px;
+    display: block;
+    position: absolute;
+    left: 780px;
+    top: -330px;
+}
+.stars .star5{
+    left: 1040px;
+    top: -20px;
+    font-size: 16px;
+    display: block;
+    position: absolute;
+}
+.stars .star6{
+    left: 1300px;
+    top: -330px;
+    font-size: 16px;
+    display: block;
+    position: absolute;
+}
+.stars .star7{
+    left: 1560px;
+    top: -20px;
+    font-size: 16px;
+    display: block;
+    position: absolute;
+}
+.stars .star8{
+    left: 1820px;
+    top: -330px;
+    font-size: 16px;
+    display: block;
+    position: absolute;
+}
+.stars .star9{
+    left: 0;
+    top: -640px;
+    font-size: 16px;
+    display: block;
+    position: absolute;
+}
+.stars .star10{
+    left:520px;
+    top: -640px;
+    font-size: 16px;
+    display: block;
+    position: absolute;
+}
+.stars .star11{
+    left: 1040px;
+    top: -640px;
+    font-size: 16px;
+    display: block;
+    position: absolute;
+}
+.stars .star12{
+    left: 1560px;
+    top: -640px;
+    font-size: 16px;
+    display: block;
+    position: absolute;
+}
+#noche:checked ~ .container-proyecto .stars {
+    top: 95%;
+    visibility: visible;
+    transition: 1s;
 }
 .container-proyecto{
     height: 100vh;
@@ -22,18 +243,21 @@
     width: 100%;
     visibility: visible;
 }
-.container-proyecto .background-proyecto{
+.background-proyecto{
+    position: absolute;
+    top: -100%;
+    left: 0;
+    visibility: hidden;
     height: 100vh;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #0a0a24;
-    visibility: hidden;
+    transition: .3s;
 }
-#noche:checked ~ .container-proyecto .background-proyecto{
-    background-color: #0a0a24;
+#noche:checked ~ .container-proyecto  .background-proyecto{
+    background-color: rgb(14, 11, 37);
+    top: 0;
     visibility: visible;
+    opacity: 1;
+    transition: .3s;
 }
 .waves{
     position: absolute;
@@ -102,6 +326,18 @@
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0px 0px 14px rgba(0,0,0,0.8);
+    cursor: pointer;
+    transition: .6s;
+}
+.container:hover{
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.7),
+    0px 0px 15px rgba(0,0,0,0.8)
+    ;
+}
+.container:hover .container__imagen img{
+    transform: scale(1.07);
+    transition: .6s;
+    height: 340px;
 }
 
 .container .container__imagen .background{
@@ -121,6 +357,7 @@
     object-fit: cover;
     top: 60px; 
     left:-45%;
+    transition: .6s;
 }
 .container .container__imagen .background-two{
     width: 410px;
